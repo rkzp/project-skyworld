@@ -12,5 +12,5 @@ daylight_cycle_hours = 0.0666667
 atmosphere_ceiling = 1000.0
 planet_radius = 1.2e+07
 projection_type = 1
-focus_object = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.973, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":null,"speed":30.0,"rotation_speed":2.5,"planet_data":null,"visibility_cutoff":10000.0,"altitude":11.973,"loc":Basis(0.0556473, 0.832401, 0.551372, 0, 0.552228, -0.833693, -0.998451, 0.0463928, 0.03073),"loc_euler_degrees":Vector3(56.48, 86.81, 0),"is_focus_point":true,"reprojection_requested":false)
+focus_object = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.973, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":null,"speed":30.0,"rotation_speed":2.5,"planet_data":null,"visibility_cutoff":10000.0,"altitude":11.973,"loc":Basis(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107),"loc_euler_degrees":Vector3(45, 0, 0),"is_focus_point":true,"reprojection_requested":false)
 

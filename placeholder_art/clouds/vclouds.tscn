@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cblycyvtq0qsp"]
+
+[ext_resource type="Material" uid="uid://bndx8pjxheac5" path="res://placeholder_art/clouds/clouds.tres" id="1_fqmr3"]
+
+[node name="FogVolume" type="FogVolume"]
+shape = 4
+material = ExtResource("1_fqmr3")
