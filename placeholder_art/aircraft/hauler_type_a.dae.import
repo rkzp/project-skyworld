@@ -1,0 +1,85 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://4sbpafjg0xcn"
+path="res://.godot/imported/hauler_type_a.dae-ca2d58d9d20e7af4edf494ad3bff0f6a.scn"
+
+[deps]
+
+source_file="res://placeholder_art/aircraft/hauler_type_a.dae"
+dest_files=["res://.godot/imported/hauler_type_a.dae-ca2d58d9d20e7af4edf494ad3bff0f6a.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"meshes": {
+"Cube": {
+"generate/lightmap_uv": 2,
+"generate/lods": 2,
+"generate/shadow_meshes": 2,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": false,
+"save_to_file/make_streamable": "",
+"save_to_file/path": ""
+},
+"Cube.002": {
+"generate/lightmap_uv": 2,
+"generate/lods": 2,
+"generate/shadow_meshes": 2,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": false,
+"save_to_file/make_streamable": "",
+"save_to_file/path": ""
+},
+"Cube.005": {
+"generate/lightmap_uv": 2,
+"generate/lods": 2,
+"generate/shadow_meshes": 2,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": false,
+"save_to_file/make_streamable": "",
+"save_to_file/path": ""
+}
+},
+"nodes": {
+"PATH:AnimationPlayer": {
+"import/skip_import": true
+},
+"PATH:body": {
+"generate/physics": true,
+"physics/body_type": 1,
+"physics/shape_type": 2
+},
+"PATH:canopy_glass": {
+"generate/physics": true,
+"physics/body_type": 1,
+"physics/shape_type": 2
+},
+"PATH:engine_block": {
+"generate/physics": true,
+"physics/body_type": 1,
+"physics/shape_type": 2
+}
+}
+}
+gltf/embedded_image_handling=1

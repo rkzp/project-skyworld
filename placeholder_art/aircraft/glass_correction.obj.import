@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d2h4gdiysmab7"
+path="res://.godot/imported/glass_correction.obj-3b7d15a740c1feb7b02abd36506555ba.mesh"
+
+[deps]
+
+files=["res://.godot/imported/glass_correction.obj-3b7d15a740c1feb7b02abd36506555ba.mesh"]
+
+source_file="res://placeholder_art/aircraft/glass_correction.obj"
+dest_files=["res://.godot/imported/glass_correction.obj-3b7d15a740c1feb7b02abd36506555ba.mesh", "res://.godot/imported/glass_correction.obj-3b7d15a740c1feb7b02abd36506555ba.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

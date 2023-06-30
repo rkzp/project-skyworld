@@ -1,0 +1,19 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://assets/materials/brushed_metal/Metal009_1K_Metalness.png" type="Texture" id=1]
+[ext_resource path="res://assets/materials/brushed_metal/Metal009_1K_Color.png" type="Texture" id=2]
+[ext_resource path="res://assets/materials/brushed_metal/Metal009_1K_Roughness.png" type="Texture" id=3]
+[ext_resource path="res://assets/materials/brushed_metal/Metal009_1K_NormalGL.png" type="Texture" id=4]
+
+[resource]
+flags_world_triplanar = true
+albedo_texture = ExtResource( 2 )
+metallic = 0.9
+metallic_texture = ExtResource( 1 )
+roughness = 0.9
+roughness_texture = ExtResource( 3 )
+normal_enabled = true
+normal_scale = 5.0
+normal_texture = ExtResource( 4 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+uv1_triplanar = true
