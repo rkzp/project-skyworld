@@ -41,7 +41,8 @@ const NORTH_POLE := Vector3(0, 1, 0)
 		return is_instance_valid(planet_data) and planet_data.focus_object == self
 @export var reprojection_requested := true:
 	set(newvalue):
-		reprojection_requested = is_instance_valid(planet_data.focus_object) and newvalue
+		if planet_data:
+			reprojection_requested = is_instance_valid(planet_data.focus_object) and newvalue
 
 func _ready():
 	planet_data.reproject.connect(func():reprojection_requested = true)

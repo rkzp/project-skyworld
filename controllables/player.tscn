@@ -1,0 +1,83 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgra51uj1foms"]
+
+[sub_resource type="GDScript" id="GDScript_37h3d"]
+script/source = "# controlled player character script
+extends CharacterBody3D
+
+@export var active: bool = true
+@export var walking_speed: float = 5.0
+@export var running_speed: float = 10.0
+@export var acceleration: float = 10.0
+var speed: float:
+	get:
+		if Input.is_action_pressed(\"character_run\"):
+			return running_speed
+		else:
+			return walking_speed
+@export var camera_gimbal: Node3D
+@export var sensetivity: float = 1.2
+var mouse_motion: Vector2
+
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _physics_process(delta):
+	if camera_gimbal:
+		rotate_y(-deg_to_rad(mouse_motion.x * sensetivity))
+		camera_gimbal.rotation_degrees.x = clamp(camera_gimbal.rotation_degrees.x - mouse_motion.y * sensetivity, -90, 90)
+		mouse_motion = Vector2.ZERO
+	
+	var y_vel := velocity.y
+	if not is_on_floor(): y_vel -= 9.8 # gravity.
+	
+	velocity.y = 0.0
+	
+	var inputmotion := Input.get_vector(\"character_left\", \"character_right\", \"character_fwd\", \"character_bwd\")
+	var targetvel := transform.basis * (Vector3(inputmotion.x, 0.0, inputmotion.y) * speed)
+	velocity = velocity.move_toward(targetvel, delta * acceleration) + Vector3(0.0, y_vel, 0.0)
+	
+	move_and_slide()
+	
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		mouse_motion = event.relative
+"
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_k2q5i"]
+length = 0.5
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1keff"]
+radius = 0.2
+height = 1.3
+
+[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("camera_gimbal")]
+collision_layer = 4
+collision_mask = 7
+script = SubResource("GDScript_37h3d")
+acceleration = 20.0
+camera_gimbal = NodePath("CameraGimbal")
+sensetivity = 0.1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 6.12323e-17, -1, 0, 1, 6.12323e-17, 0, 0.5, 0)
+shape = SubResource("SeparationRayShape3D_k2q5i")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, 0)
+shape = SubResource("CapsuleShape3D_1keff")
+
+[node name="CameraGimbal" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="PlayerCameraNear" type="Camera3D" parent="CameraGimbal"]
+cull_mask = 14
+current = true
+fov = 80.0
+far = 1000.0
+
+[node name="PlayerCameraFar" type="Camera3D" parent="CameraGimbal"]
+cull_mask = 21
+fov = 80.0
+near = 1000.0
+far = 40000.0
